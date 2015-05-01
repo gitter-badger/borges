@@ -21,6 +21,8 @@ Vision:
   - the user gets a nice ui for editing content based on these data models
   - be as heroku-ready as possible
   - be open source and free forever
-  - stay simple, borges is a library not a framework
-  - be pluggable
-
+  - stay simple, borges is a library not a framework, should be easy to install
+    and set up.
+  - Borges.js is pluggable
+  - be state-of-the art. Borges.js is written and tested in ES6-compliant
+    javascript.
