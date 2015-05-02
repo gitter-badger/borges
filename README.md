@@ -12,7 +12,7 @@ content.  `Borges.js` provides a nice backend UI for users to create
 and edit this content, as well as a simepl API for developers to acces
 the created content.  The rest is up to the developer.
 
-Vision:
+## Vision:
   - the persistence layer is interchangeable (allows use of SQL, MongoDB, Couch,
     ...)
   - rendering engine is interchangeable (allows use of any one of the multitude
@@ -26,3 +26,5 @@ Vision:
   - Borges.js is pluggable
   - be state-of-the art. Borges.js is written and tested in ES6-compliant
     javascript.
+  - embrace new web technology to allow for offline, realtime, ... apps fluently
+
