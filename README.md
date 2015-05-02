@@ -28,3 +28,8 @@ the created content.  The rest is up to the developer.
     javascript.
   - embrace new web technology to allow for offline, realtime, ... apps fluently
 
+## Roadmap
+  - Decide on a modelling language or library.  Let's not reinvent the wheel
+    here, but let's also choose something that's extensible.
+  - Get a basic architecture going so we have something to experiment
+    with.  This will clarify what future steps need to be taken.
