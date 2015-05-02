@@ -27,6 +27,7 @@ the created content.  The rest is up to the developer.
   - be state-of-the art. Borges.js is written and tested in ES6-compliant
     javascript.
   - embrace new web technology to allow for offline, realtime, ... apps fluently
+  - embrace open standards, such as json-schema, json-api, ...
 
 ## Roadmap
   - Decide on a modelling language or library.  Let's not reinvent the wheel
