@@ -12,6 +12,6 @@ var srv = koa();
 srv.use(library.server);
 
 // start server
-var port = process.env.PORT || 2000;
+var port = process.env.PORT || 3000;
 srv.listen(port);
 console.log(`listening on port ${port}...`);
