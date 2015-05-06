@@ -1,0 +1,19 @@
+<!doctype html>
+<html class='no-js'>
+  <head>
+    <title>Borges</title>
+    <link rel='stylesheet' href='/borges/assets/app.css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    {{! initialize app }}
+    <div id='app'>{{{ markup }}}</div>
+
+    {{! bootstrap data}}
+    <script>
+      var initial = {{{ data }}};
+    </script>
+    <script src='/borges/assets/app.js' defer></script>
+    <link rel='stylesheet' href='/borges/assets/font-awesome/css/font-awesome.css' />
+  </body>
+</html>

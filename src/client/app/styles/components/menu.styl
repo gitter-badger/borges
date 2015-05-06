@@ -1,0 +1,111 @@
+
+$navbg = $gray
+$navhover = $darkgray
+
+$menuw = 16rem
+$navw  = 5rem
+$barw  = $menuw + $navw
+
+.sidebar
+  position fixed
+  top 0
+  bottom 0
+  left 0
+
+.sidebar-nav
+  position fixed
+  top 0
+  bottom 0
+  left 0
+  width $navw
+  background $navbg
+  z-index 50
+
+  .nav-lower
+    position absolute
+    bottom 0
+    left 0
+    width $navw
+
+.sidebar-nav-item
+    z-index 50
+    position relative
+
+    a
+      display block
+      height $navw
+      line-height $navw
+      text-align center
+      color inherit
+      text-decoration none
+      color lighten(black, 3)
+      font-size .9em
+      transition background $time, color $time
+
+      &:hover
+        background $primary
+        color darken($primary, 65)
+
+
+    .sidebar-nav-name
+      position absolute
+      top 0
+      bottom 0
+      margin auto
+      height 2rem
+      line-height 2rem
+      padding 0 .8rem
+      border-radius 2rem
+      background $primary
+      color darken($primary, 60)
+      opacity 0
+      overflow none
+      transition opacity $time, height 0 $time
+      // left -500px
+      box-sizing border-box
+      height 0
+      left $navw + 1rem
+
+    & a:hover + .sidebar-nav-name
+      opacity 1
+      height 2rem
+      transition opacity $time, height 0
+
+.sidebar-nav-home
+  font-family 'Charter'
+  font-size 1.2em
+  font-style italic
+
+  border-bottom 1px solid darken($primary, 3)
+
+
+// set menu width
+.borges
+  main
+    margin-left $barw
+    padding 1em
+
+    header
+      height $navw
+      line-height $navw
+
+
+.sidebar-menu
+  width $menuw
+  left $navw
+  top 0
+  bottom 0
+  background $lightgray
+  position fixed
+  z-index 45
+
+  .sidebar-title
+    height $navw
+    line-height $navw
+    text-align center
+    font-weight inherit
+    font-size inherit
+    background darken($lightgray, 4)
+    margin 0
+
+

@@ -19,12 +19,29 @@
   "devDependencies": {
     "babel": "latest",
     "babel-eslint": "latest",
-    "babel-runtime": "latest",
     "chai": "latest",
     "coveralls": "latest",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-watch": "^4.2.4",
+    "heimlich": "git://github.com/romeovs/heimlich",
     "lab": "latest"
   },
   "dependencies": {
-    "react": "^0.13.2"
+    "all": "git://github.com/romeovs/all",
+    "babel-runtime": "latest",
+    "babelify": "latest",
+    "fetch": "git://github.com/romeovs/fetch",
+    "gulp": "latest",
+    "gulp-rename": "latest",
+    "handlebars": "latest",
+    "koa": "latest",
+    "koa-mount": "latest",
+    "koa-router": "latest",
+    "koa-static": "latest",
+    "map-stream": "latest",
+    "mz": "latest",
+    "react": "latest",
+    "react-router": "latest",
+    "uuid": "latest"
   }
 }

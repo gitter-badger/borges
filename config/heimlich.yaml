@@ -1,0 +1,20 @@
+
+# source files
+src:
+  js:
+    - ./src/client/app/index.jsx
+  css:
+    - ./src/client/app/styles/main.styl
+
+# files to watch for changes in
+watch:
+  js:
+    - ./src/client/**/*.+(js|jsx|hbs)
+    - ./src/server/**/*.+(js|jsx)
+  css:
+    - ./src/client/app/styles/**/*.+(styl|css)
+
+# destination folders
+dest:
+  js:  ./public
+  css: ./public
