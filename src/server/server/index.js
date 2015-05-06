@@ -16,8 +16,6 @@ export default function(options = {}) {
   // install router
   app.use(router(app));
 
-  console.log(assets);
-
   // install asset routes
   app.use(assets);
 
