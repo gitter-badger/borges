@@ -50,11 +50,14 @@ by doing:
 ```sh
 npm run dev
 ```
-or, when you're editing the UI files and want it to restart when changes happen:
+this starts the example server that's located in the `dev/` directory.
+
+When you're editing the UI files and want it to restart when changes happen:
 ```sh
 gulp --watch
 ```
-provided you have `gulp` installed.
+provided you have `gulp` installed.  This will rebuild the frontend files
+as well as restart the server any time something has changed.
 
 
 ### License
