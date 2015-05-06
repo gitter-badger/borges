@@ -38,9 +38,24 @@ the created content.  The rest is up to the developer.
 
 ## Roadmap
   - Decide on a modelling language or library.  Let's not reinvent the wheel
-    here, but let's also choose something that's extensible.
+    here, but let's also choose something that's extensible.  I'm thinking of
+    going with an extended version json-schema.
+
   - Get a basic architecture going so we have something to experiment
     with.  This will clarify what future steps need to be taken.
+
+## Development
+To contribute, fork the repo and clone it.  You can start the dev server
+by doing:
+```sh
+npm run dev
+```
+or, when you're editing the UI files and want it to restart when changes happen:
+```sh
+gulp --watch
+```
+provided you have `gulp` installed.
+
 
 ### License
 This code is licensed under the [ISC license][license]
