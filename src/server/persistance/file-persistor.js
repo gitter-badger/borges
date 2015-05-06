@@ -39,8 +39,13 @@ export default class FilePersistor extends Persistor {
   // >>
 
   // create path for item of type with id <<
-  _pathFor(type, id = '') {
-    return path.join(this.basepath, type, id);
+  _pathFor(type, id = '', rev = '') {
+    if ( id === '' && rev !== '' ) {
+      throw new Error('when specifying rev, you should also give id');
+    }
+
+    rev = rev === '' ? '' : `${rev}.json`;
+    return path.join(this.basepath, type, id, rev);
   }
   // >>
 
@@ -68,19 +73,29 @@ export default class FilePersistor extends Persistor {
   }
   // >>
 
+  // check if path exists <<
+  async _exists(type, id, rev) {
+    var pth = this._pathFor(type, id);
+    if (!(await fs.exists(pth))) {
+      throw new Persistor.NotFoundError(type, id);
+    }
+
+    if ( rev ) {
+      var revpth = this._pathFor(type, id, rev);
+      if (!(await fs.exists(revpth))) {
+        throw new Persistor.BadRevError(type, id, rev);
+      } else {
+        return revpth;
+      }
+    } else {
+      return pth;
+    }
+  }
+  // >>
+
   // read an item from disk <<
   async _readItem(type, id, rev) {
-    var pth = this._pathFor(type, id);
-    var revpth = path.join(pth, `${rev}.json`);
-
-    if ( !(await fs.exists(pth) ) ) {
-      throw new Persistor.errors.NotFoundError(type, id);
-    }
-
-    if ( !(await fs.exists(pth) ) ) {
-      throw new Persistor.errors.BadRevError(type, id, rev);
-    }
-
+    var revpth = await this._exists(type, id, rev);
     var content = await fs.readFile(revpth);
     return JSON.parse(content.toString());
   }
@@ -88,7 +103,7 @@ export default class FilePersistor extends Persistor {
 
   // GET: get an item, possibly a specific rev <<
   async get(type, id, rev) {
-    rev = rev || (await this._lastRev(type, id));
+    rev = rev || (await this.lastRev(type, id));
 
     return this._readItem(type, id, rev);
   }
@@ -96,23 +111,19 @@ export default class FilePersistor extends Persistor {
 
   // REVISIONS: get all revisions of an item <<
   async revisions(type, id) {
-    var pth = this._pathFor(type, id);
+    var pth = await this._exists(type, id);
 
-    if ( await fs.exists(pth)) {
-      var files = await fs.readdir(pth);
-      var res =
-        files
-          .filter(function(filename) {
-            return path.extname(filename) === '.json';
-          })
-          .map(function(filename) {
-            return path.basename(filename, '.json');
-          });
+    var files = await fs.readdir(pth);
+    var res =
+      files
+        .filter(function(filename) {
+          return path.extname(filename) === '.json';
+        })
+        .map(function(filename) {
+          return Number(path.basename(filename, '.json'));
+        });
 
-      return res;
-    } else {
-      throw new Persistor.NotFoundError(type, id);
-    }
+    return res;
   }
   // >>
 
@@ -125,14 +136,14 @@ export default class FilePersistor extends Persistor {
 
   // UPDATE: update/add an item <<
   async update(type, id, item) {
-    var rev = (await this._lastRev(type, id)) + 1;
+    var rev = (await this.lastRev(type, id)) + 1;
     return this._writeItem(type, id, rev, item);
   }
   // >>
 
   // REMOVE: remove item <<
   async remove(type, id) {
-    var pth = this._pathFor(type, id);
+    var pth = await this._exists(type, id);
     await fs.rmdir(pth);
     return {ok: true};
   }
