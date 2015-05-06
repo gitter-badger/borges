@@ -8,7 +8,8 @@
     "test": "lab -T babel.js -S",
     "coverage": "npm run test -- --coverage -r lcov | ./node_modules/.bin/coveralls",
     "hcoverage": "npm run test -- --coverage -r html -o coverage.html && open coverage.html",
-    "lint": "eslint -c .eslintrc src/**.js"
+    "lint": "eslint -c .eslintrc src/**.js",
+    "dev":  "node --harmony dev/start"
   },
   "repository": {
     "type": "git",

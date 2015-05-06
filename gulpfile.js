@@ -44,7 +44,7 @@ var nodemon = require('gulp-nodemon');
 gulp.task('node', function() {
   var nm =
     nodemon({
-      script: 'start.js'
+      script: 'dev/start.js'
     , nodeArgs: [ '--harmony' ]
     , restartable: false
     });
