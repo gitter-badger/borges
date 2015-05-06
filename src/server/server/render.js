@@ -7,11 +7,11 @@ import routes from '../../client/app/routes';
 
 var template = hbs.compile(fs.readFileSync(path.join(__dirname, '../../client/app/views/main.hbs')).toString());
 
-export default function(path) {
-  path = path.replace(/\/$/, '');
+export default function(pth) {
+  pth = pth.replace(/\/$/, '');
   return new Promise(function(resolve, reject) {
     try {
-      Router.run(routes, path, function(Handler, state) {
+      Router.run(routes, pth, function(Handler) { // todo: add state
         try {
           var data = {};
           resolve(template({
@@ -26,4 +26,4 @@ export default function(path) {
       reject(err);
     }
   });
-};
+}

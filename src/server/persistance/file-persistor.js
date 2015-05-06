@@ -22,7 +22,7 @@ export default class FilePersistor extends Persistor {
 
     var mkdir = async function(i) {
       if ( i === dirs.length ) {
-        return;
+        return undefined;
       }
 
       var dir = dirs.slice(0, i+1).join(path.sep);
@@ -30,7 +30,7 @@ export default class FilePersistor extends Persistor {
         return mkdir(i + 1);
       } else {
         await fs.mkdir(dir);
-        return mkdir(i + 1)
+        return mkdir(i + 1);
       }
 
     };

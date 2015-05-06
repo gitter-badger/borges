@@ -38,8 +38,7 @@
 import uuid from 'uuid';
 
 export default class Persistor {
-  constructor(options) {
-
+  constructor() {
   }
 
   // create a new id
@@ -59,7 +58,7 @@ export default class Persistor {
     return this.update(type, id, old);
   }
 
-};
+}
 
 class NotFoundError extends Error {
   constructor(type, id) {
@@ -67,10 +66,11 @@ class NotFoundError extends Error {
     this.name    = 'NotFoundError';
     this.message = `item with id \`${id}\` of type \`${type}\` does not exist`;
     this.type    = type;
-    this.id      = id
+    this.id      = id;
     this.status  = 404;
   }
-};
+}
+
 Persistor.NotFoundError = NotFoundError;
 
 class BadRevError extends Error {
@@ -79,10 +79,10 @@ class BadRevError extends Error {
     this.name    = 'BadRevError';
     this.message = `unknown revision \`${rev}\` for item with id \`${id}\` of type \`${type}\``;
     this.type    = type;
-    this.id      = id
+    this.id      = id;
     this.rev     = rev;
     this.status  = 404;
   }
-};
+}
 
 Persistor.BadRevError = BadRevError;

@@ -6,4 +6,4 @@ export default function(options = {}) {
     server: server(options)
   , data:   persistance(options)
   };
-};
+}

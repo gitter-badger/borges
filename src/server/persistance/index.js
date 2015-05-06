@@ -3,10 +3,10 @@ import FilePersistor from './file-persistor';
 export default function(options) {
 
   var {
-    persistor = FilePersistor
+    persistor: Persistor = FilePersistor
   } = options;
+  var p = new Persistor(options);
 
-  var p = new persistor(options);
 
   var res = {};
 
@@ -19,10 +19,10 @@ export default function(options) {
   , 'list'
   , 'revisions'
   ].forEach(function(key) {
-    return res[key] = p[key].bind(p);
+    res[key] = p[key].bind(p);
   });
 
   return res;
-};
+}
 
 export { FilePersistor };

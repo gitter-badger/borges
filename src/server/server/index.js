@@ -28,4 +28,4 @@ export default function(options = {}) {
 
   // create server and mount the borges dashboard at `base` path
   return mount(base, app);
-};
+}
