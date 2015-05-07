@@ -13,10 +13,9 @@ $barw  = $menuw + $navw
   left 0
 
 .sidebar-nav
-  position fixed
-  top 0
-  bottom 0
-  left 0
+  display inline-block
+  vertical-align top
+  height 100%
   width $navw
   background $navbg
   z-index 50
@@ -40,11 +39,14 @@ $barw  = $menuw + $navw
       text-decoration none
       color lighten(black, 3)
       font-size .9em
-      transition background $time, color $time
+      transition background-color $time, color $time
 
       &:hover
-        background $primary
+        background-color $primary
         color darken($primary, 65)
+
+      &:active
+        background-color darken($primary, 8)
 
 
     .sidebar-nav-name
@@ -72,11 +74,13 @@ $barw  = $menuw + $navw
       transition opacity $time, height 0
 
 .sidebar-nav-home
-  font-family 'Charter'
-  font-size 1.2em
-  font-style italic
+  a
+    background url('/borges/assets/static/logo.svg') no-repeat
+    background-size 65%
+    background-position center
 
-  border-bottom 1px solid darken($primary, 3)
+  .fa
+    display none
 
 
 // set menu width
@@ -85,27 +89,22 @@ $barw  = $menuw + $navw
     margin-left $barw
     padding 1em
 
-    header
-      height $navw
-      line-height $navw
-
-
 .sidebar-menu
   width $menuw
-  left $navw
-  top 0
-  bottom 0
+  height 100%
   background $lightgray
-  position fixed
   z-index 45
+  display inline-block
 
-  .sidebar-title
+  .sidebar-menu-title
     height $navw
     line-height $navw
     text-align center
     font-weight inherit
     font-size inherit
-    background darken($lightgray, 4)
+    background lighten($darkgray, 9)
     margin 0
 
+  .sidebar-menu-item
+    padding .2em
 

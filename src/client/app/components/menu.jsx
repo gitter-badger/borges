@@ -23,7 +23,7 @@ const Item = React.createClass({
 
 , render() {
     return (
-      <li className="sidebar-nav-item">
+      <li className={`sidebar-nav-item ${this.props.className}`}>
         <Link to={this.props.to}><i className={`fa fa-${this.props.icon}`}></i></Link>
         {this.renderName()}
       </li>
@@ -37,11 +37,12 @@ const Menu = React.createClass({
       <aside className="sidebar">
         <nav className="sidebar-nav">
           <ul className="nav-upper">
-            <Item icon="bold" to="home" />
+            <Item icon="bold" to="home" className="sidebar-nav-home"/>
             <Item icon="plus-circle" name="add" to="home" />
             <Item icon="copy" name="content" to="home" />
             <Item icon="pie-chart" name="stats" to="home" />
             <Item icon="user" name="users" to="home" />
+            <Item icon="bell" name="notifications" to="home" />
           </ul>
           <ul className="nav-lower">
             <Item icon="cog" name="settings" to="home" />
@@ -49,7 +50,10 @@ const Menu = React.createClass({
         </nav>
 
         <nav className="sidebar-menu">
-          <h1 className="sidebar-title">Statistics</h1>
+          <h1 className="sidebar-menu-title">Statistics</h1>
+          <ul>
+
+          </ul>
         </nav>
       </aside>
     );
