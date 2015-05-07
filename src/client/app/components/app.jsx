@@ -1,4 +1,5 @@
-import React from 'react';
+import React  from 'react';
+import Router from 'react-router';
 
 import Menu   from './menu';
 
@@ -8,10 +9,7 @@ const App = React.createClass({
       <div className="borges">
         <Menu />
         <main>
-          <header>
-
-          </header>
-          Hello!
+          <Router.RouteHandler/>
         </main>
       </div>
     );
