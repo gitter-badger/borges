@@ -4,11 +4,13 @@ import fs     from 'fs';
 import path   from 'path';
 import hbs    from 'handlebars';
 import routes from '../../client/app/routes';
+import debug  from '../../lib/debug';
 
 var template = hbs.compile(fs.readFileSync(path.join(__dirname, '../../client/app/views/main.hbs')).toString());
 
 export default function(pth) {
   pth = pth.replace(/\/$/, '');
+  debug(`GET ${pth}`)
   return new Promise(function(resolve, reject) {
     try {
       Router.run(routes, pth, function(Handler) { // todo: add state
