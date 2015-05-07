@@ -38,6 +38,12 @@ gulp.task('app:css',
   , filename: 'app.css'
   }));
 
+gulp.task('static', function() {
+  return gulp.src(heim.config.src.stat)
+    .pipe(heim.dest(heim.config.dest.stat));
+});
+
+
 var restart;
 var nodemon = require('gulp-nodemon');
 
@@ -58,6 +64,10 @@ gulp.task('default', ['app:css', 'app:js'], function() {
     // watch css files
     watch(heim.config.watch.css, function() {
       gulp.start('app:css');
+    });
+
+    watch(heim.config.watch.stat, function() {
+      gulp.start('static');
     });
 
     gulp.start('node');

@@ -1,0 +1,98 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 64 64"
+>
+  <style>
+    .back {
+      fill: #7accc2;
+    }
+
+    .side {
+      fill: #95d4cc;
+    }
+
+    .front {
+      fill: #b0ded8;
+    }
+
+
+    .begin {
+      stop-color:   #fff;
+      stop-opacity: 0;
+    }
+
+    .end {
+      stop-color:   #2f5f59;
+      stop-opacity: 0.13;
+    }
+  </style>
+
+<defs>
+  <!-- general gradient -->
+  <linearGradient id="g" gradientUnits="userSpaceOnUse" >
+    <stop  offset="0" class="begin" />
+    <stop  offset="1" class="end" />
+  </linearGradient>
+
+  <!-- right back -->
+  <polygon id="TRB" points="52,12 52,28 32,16 32,0"  />
+  <use xlink:href="#TRB" id="BRB" transform="translate(0, 24)"/>
+
+  <!-- left back -->
+  <polygon id="TLB" points="32,16 32,0 12,12 12,28" />
+  <use xlink:href="#TLB" id="BLB" transform="translate(0, 24)"/>
+
+  <!-- right front -->
+  <polygon id="TRF" points="52,28 52,12 32,24 32,40" />
+  <use xlink:href="#TRF" id="BRF" transform="translate(0, 24)"/>
+
+  <!-- left front -->
+  <polygon id="TLF" points="32,24 32,40 12,28 12,12" />
+  <use xlink:href="#TLF" id="BLF" transform="translate(0, 24)"/>
+
+</defs>
+
+  <!-- top right back -->
+  <linearGradient xlink:href="#g" id="g8" x1="32" y1="15" x2="52" y2="12" />
+  <use xlink:href="#TRB" class="side"    />
+  <use xlink:href="#TRB" fill="url(#g8)" />
+
+  <!-- bottom right back -->
+  <linearGradient xlink:href="#g" id="g5" x1="32" y1="40" x2="53" y2="36" />
+  <use xlink:href="#BRB" class="side"    />
+  <use xlink:href="#BRB" fill="url(#g5)" />
+
+  <!-- top left back -->
+  <linearGradient xlink:href="#g" id="g7" x1="16" y1="20" x2="32" y2="4" />
+  <use xlink:href="#TLB" class="back"    />
+  <use xlink:href="#TLB" fill="url(#g7)" />
+
+  <!-- bottom left back -->
+  <linearGradient xlink:href="#g" id="g6" x1="12" y1="38" x2="32" y2="38" />
+  <use xlink:href="#BLB" class="back"    />
+  <use xlink:href="#BLB" fill="url(#g6)" />
+
+  <!-- connector -->
+  <polygon class="back" points="24,28 12,40 12,24 24,12" />
+
+  <!-- top right front -->
+  <linearGradient xlink:href="#g" id="g1" x1="33" y1="31" x2="54" y2="19" />
+  <use xlink:href="#TRF" class="front"   />
+  <use xlink:href="#TRF" fill="url(#g1)" />
+
+  <!-- top left front -->
+  <linearGradient xlink:href="#g" id="g2" x1="12" y1="26" x2="32" y2="26" />
+  <use xlink:href="#TLF" class="side"   />
+  <use xlink:href="#TLF" fill="url(#g2)" />
+
+  <!-- bottom left front -->
+  <linearGradient xlink:href="#g" id="g3" x1="12" y1="50" x2="32" y2="50" />
+  <use xlink:href="#BLF" class="side"   />
+  <use xlink:href="#BLF" fill="url(#g3)" />
+
+  <!-- bottom right front -->
+  <linearGradient xlink:href="#g" id="g4" x1="32" y1="52" x2="54" y2="47"/>
+  <use xlink:href="#BRF" class="front"   />
+  <use xlink:href="#BRF" fill="url(#g4)" />
+</svg>

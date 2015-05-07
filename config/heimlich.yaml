@@ -5,6 +5,8 @@ src:
     - ./src/client/app/index.jsx
   css:
     - ./src/client/app/styles/main.styl
+  stat:
+    - ./static/**/*
 
 # files to watch for changes in
 watch:
@@ -14,7 +16,11 @@ watch:
   css:
     - ./src/client/app/styles/**/*.+(styl|css)
 
+  stat:
+    - ./static/**/*
+
 # destination folders
 dest:
-  js:  ./public
-  css: ./public
+  js:     ./public
+  css:    ./public
+  stat: ./public/static
