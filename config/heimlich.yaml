@@ -6,7 +6,7 @@ src:
   css:
     - ./src/app/styles/main.styl
   stat:
-    - ./static/**/*
+    - ./src/app/static/**/*
 
 # files to watch for changes in
 watch:
@@ -16,7 +16,7 @@ watch:
     - ./src/app/styles/**/*.+(styl|css)
 
   stat:
-    - ./static/**/*
+    - ./src/app/static/**/*
 
 # destination folders
 dest:
