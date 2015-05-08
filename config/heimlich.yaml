@@ -2,25 +2,24 @@
 # source files
 src:
   js:
-    - ./src/client/app/index.jsx
+    - ./src/app/index.jsx
   css:
-    - ./src/client/app/styles/main.styl
+    - ./src/app/styles/main.styl
   stat:
     - ./static/**/*
 
 # files to watch for changes in
 watch:
   js:
-    - ./src/client/**/*.+(js|jsx|hbs)
-    - ./src/server/**/*.+(js|jsx)
+    - ./src/**/*.+(js|jsx|hbs)
   css:
-    - ./src/client/app/styles/**/*.+(styl|css)
+    - ./src/app/styles/**/*.+(styl|css)
 
   stat:
     - ./static/**/*
 
 # destination folders
 dest:
-  js:     ./public
-  css:    ./public
+  js:   ./public
+  css:  ./public
   stat: ./public/static

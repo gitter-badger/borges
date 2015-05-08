@@ -3,10 +3,10 @@ import Router from 'react-router';
 import fs     from 'fs';
 import path   from 'path';
 import hbs    from 'handlebars';
-import routes from '../../client/app/routes';
+import routes from '../../app/routes';
 import debug  from '../../lib/debug';
 
-const templ    = path.join(__dirname, '../../client/app/views/main.hbs');
+const templ    = path.join(__dirname, '../../app/views/main.hbs');
 const template = hbs.compile(fs.readFileSync(templ).toString());
 
 export default function (pth) {
