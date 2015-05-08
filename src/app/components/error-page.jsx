@@ -20,6 +20,7 @@ const ErrorP = React.createClass({
 , render() {
     return (
       <div className="error-page">
+        <h1 className="logo"></h1>
         <h1>Error {this.props.status}</h1>
         <h2>{this.props.message}</h2>
         {this.renderDescription()}
