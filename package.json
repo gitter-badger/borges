@@ -33,7 +33,7 @@
   "dependencies": {
     "all": "git://github.com/romeovs/all",
     "babel-runtime": "latest",
-    "debug": "^2.1.3",
+    "debug": "latest",
     "fetch": "git://github.com/romeovs/fetch",
     "handlebars": "latest",
     "koa": "latest",
