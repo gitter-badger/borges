@@ -1,4 +1,4 @@
-import React  from 'react-router';
+import React  from 'react';
 import Router from 'react-router';
 
 const { Route
