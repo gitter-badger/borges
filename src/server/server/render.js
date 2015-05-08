@@ -6,25 +6,26 @@ import hbs    from 'handlebars';
 import routes from '../../client/app/routes';
 import debug  from '../../lib/debug';
 
-var template = hbs.compile(fs.readFileSync(path.join(__dirname, '../../client/app/views/main.hbs')).toString());
+const templ    = path.join(__dirname, '../../client/app/views/main.hbs');
+const template = hbs.compile(fs.readFileSync(templ).toString());
 
-export default function(pth) {
+export default function (pth) {
   pth = pth.replace(/\/$/, '');
-  debug(`GET ${pth}`)
-  return new Promise(function(resolve, reject) {
+  debug(`GET ${ pth }`);
+  return new Promise(function (resolve, reject) {
     try {
-      Router.run(routes, pth, function(Handler) { // todo: add state
+      Router.run(routes, pth, function (Handler) { // todo: add state
         try {
-          var data = {};
+          const data = {};
           resolve(template({
-            markup: React.renderToString(React.createElement(Handler, {data}))
+            markup: React.renderToString(React.createElement(Handler, { data }))
           , data: JSON.stringify(data)
           }));
         } catch (err) {
           reject(err);
         }
       });
-    } catch ( err ) {
+    } catch (err) {
       reject(err);
     }
   });

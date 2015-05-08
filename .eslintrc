@@ -12,6 +12,8 @@ env:
 
 ecmaFeatures:
   modules: true
+  blockBindings: true
+  generators: true
 
 rules:
   quotes:
@@ -22,5 +24,37 @@ rules:
   strict               : 0  # disable strict message, it is implied in ES6
   key-spacing          : 0  # disable warnings keyspacing because we use comma at newline
   no-underscore-dangle : 0  # allow for dangling underscore
+  brace-style:              # force correct brace style
+    - 2
+    - "1tbs"
+    - allowSingleLine: true
+  space-in-brackets:        # force correct spcing in brackets
+    - 2                     # eg. disallow [1,2,3]
+    - always
+    - propertyName: false
+  space-before-function-parentheses: # no space before function call paren
+    - 2
+    - anonymous: always
+      named: never
+  space-after-keywords:  2  # force space after if, case, ...
+  space-infix-ops:     2    # force spaces arount infix operators
+  space-before-blocks: 2    # force space before opening brace
+  spaced-line-comment: 2    # need space after //
+  max-len:                  # maximum line length
+    - 2
+    - 80
+
+  padded-blocks:
+    - 2
+    - never
+
+  indent:                   # force 2 space indent
+    - 2
+    - 2
+
+  no-var: 2
+
+
+  no-extra-parens: 2        # allow for not superflouous parentheses
 
 # vim: ft=yaml

@@ -1,14 +1,12 @@
 import FilePersistor from './file-persistor';
 
-export default function(options) {
-
-  var {
+export default function (options) {
+  const {
     persistor: Persistor = FilePersistor
   } = options;
-  var p = new Persistor(options);
 
-
-  var res = {};
+  const p   = new Persistor(options);
+  const res = {};
 
   // exported api
   [
@@ -18,7 +16,7 @@ export default function(options) {
   , 'remove'
   , 'list'
   , 'revisions'
-  ].forEach(function(key) {
+  ].forEach(function (key) {
     res[key] = p[key].bind(p);
   });
 

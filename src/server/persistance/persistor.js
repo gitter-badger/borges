@@ -48,13 +48,13 @@ export default class Persistor {
 
   // get the last revision of an item
   async lastRev(type, id) {
-    var revs = await this.revisions(type, id);
+    const revs = await this.revisions(type, id);
     return revs[revs.length - 1];
   }
 
   // revert and item to a previous revision
   async revert(type, id, rev) {
-    var old = await this.get(type, id, rev);
+    const old = await this.get(type, id, rev);
     return this.update(type, id, old);
   }
 
@@ -77,7 +77,8 @@ class BadRevError extends Error {
   constructor(type, id, rev) {
     super();
     this.name    = 'BadRevError';
-    this.message = `unknown revision \`${rev}\` for item with id \`${id}\` of type \`${type}\``;
+    this.message = `unknown revision \`${rev}\` for item`
+                 + `with id \`${id}\` of type \`${type}\``;
     this.type    = type;
     this.id      = id;
     this.rev     = rev;

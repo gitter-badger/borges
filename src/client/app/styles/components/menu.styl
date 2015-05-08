@@ -5,26 +5,36 @@ $navhover = $darkgray
 $menuw = 16rem
 $navw  = 5rem
 $barw  = $menuw + $navw
+$navitems = 7
 
 .sidebar
   position fixed
   top 0
   bottom 0
+  width $navw + $menuw
+  // min-height 100%
   left 0
+  overflow-y scroll
+  // overflow-y scroll
+  // overflow-x visible
 
 .sidebar-nav
   display inline-block
   vertical-align top
-  height 100%
+  min-height 100%
   width $navw
   background $navbg
   z-index 50
+  // overflow visible
 
   .nav-lower
     position absolute
     bottom 0
     left 0
     width $navw
+
+    @media screen and (max-height: $navitems*$navw)
+      position static
 
 .sidebar-nav-item
     z-index 50
@@ -90,11 +100,18 @@ $barw  = $menuw + $navw
     padding 1em
 
 .sidebar-menu
+  position absolute
+  display inline-block
   width $menuw
+  top 0
+  left $navw
   height 100%
+  min-height $navitems * $navw
   background $lightgray
   z-index 45
-  display inline-block
+  vertical-align top
+  padding-top $navw
+  box-sizing border-box
 
   .sidebar-menu-title
     height $navw
@@ -104,7 +121,15 @@ $barw  = $menuw + $navw
     font-size inherit
     background lighten($darkgray, 9)
     margin 0
+    position fixed
+    top 0
+    width $menuw
 
   .sidebar-menu-item
-    padding .2em
+    padding 0 1.6em
+    height $navw
+    line-height $navw
+    cursor pointer
 
+    &:hover
+      background lighten($primary, 10)

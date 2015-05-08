@@ -31,6 +31,14 @@ const Item = React.createClass({
   }
 });
 
+const Entry = React.createClass({
+  render() {
+    return (
+      <li className="sidebar-menu-item">{this.props.name}</li>
+    );
+  }
+});
+
 const Menu = React.createClass({
   render() {
     return (
@@ -52,7 +60,9 @@ const Menu = React.createClass({
         <nav className="sidebar-menu">
           <h1 className="sidebar-menu-title">Statistics</h1>
           <ul>
-
+            <Entry name="foo" />
+            <Entry name="bar" />
+            <Entry name="baz" />
           </ul>
         </nav>
       </aside>

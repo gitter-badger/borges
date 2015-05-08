@@ -5,13 +5,12 @@ import mount  from 'koa-mount';
 import assets from './assets';
 import render from './render';
 
-export default function(options = {}) {
-
-  var {
+export default function (options = {}) {
+  const {
     base = '/borges'
   } = options;
 
-  var app = koa();
+  const app = koa();
 
   // install router
   app.use(router(app));
@@ -21,7 +20,6 @@ export default function(options = {}) {
 
   // render route
   app.get(/^\/(?!.*assets)/, function * (next) {
-
     this.body = yield render('/borges' + this.request.path);
     yield next;
   });
