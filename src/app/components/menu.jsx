@@ -47,7 +47,7 @@ const Menu = React.createClass({
       <aside className="sidebar">
         <nav className="sidebar-nav">
           <ul className="nav-upper">
-            <Item icon="bold" to="home" className="sidebar-nav-home"/>
+            <Item icon="bold" to="home" className="sidebar-nav-home logo"/>
             <Item icon="plus-circle" name="add" to="home" />
             <Item icon="copy" name="content" to="home" />
             <Item icon="pie-chart" name="stats" to="home" />

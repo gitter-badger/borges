@@ -40,24 +40,22 @@ $navitems = 7
     z-index 50
     position relative
 
+    color lighten(black, 3)
+    transition background-color $time, color $time
+
+    &:hover
+      background-color $primary
+      color darken($primary, 65)
+
+    &:active
+      background-color darken($primary, 8)
+
     a
       display block
       height $navw
       line-height $navw
       text-align center
-      color inherit
-      text-decoration none
-      color lighten(black, 3)
       font-size .9em
-      transition background-color $time, color $time
-
-      &:hover
-        background-color $primary
-        color darken($primary, 65)
-
-      &:active
-        background-color darken($primary, 8)
-
 
     .sidebar-nav-name
       position absolute
@@ -84,10 +82,7 @@ $navitems = 7
       transition opacity $time, height 0
 
 .sidebar-nav-home
-  a
-    background url('/borges/assets/static/logo.svg') no-repeat
-    background-size 65%
-    background-position center
+  background-size 65%
 
   .fa
     display none
