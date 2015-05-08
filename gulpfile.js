@@ -15,7 +15,7 @@ var rebundle;
 gulp.task('app:js', function() {
   rebundle =
     heim.browserify({
-      entries: './src/client/app/index.jsx'
+      entries: heim.config.src.js
     , debug: true
     })
     .configure(function() {
