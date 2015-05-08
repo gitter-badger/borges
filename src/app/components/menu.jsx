@@ -24,7 +24,9 @@ const Item = React.createClass({
 , render() {
     return (
       <li className={`sidebar-nav-item ${this.props.className}`}>
-        <Link to={this.props.to}><i className={`fa fa-${this.props.icon}`}></i></Link>
+        <Link to={this.props.to}>
+          <i className={`fa fa-${this.props.icon}`}></i>
+        </Link>
         {this.renderName()}
       </li>
     );

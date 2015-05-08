@@ -10,10 +10,14 @@ env:
   es6     : true        # add es6 env
   mocha   : true        # add mocha env
 
+plugins:
+  - react
+
 ecmaFeatures:
   modules: true
   blockBindings: true
   generators: true
+  jsx: true
 
 rules:
   quotes:
@@ -53,8 +57,5 @@ rules:
     - 2
 
   no-var: 2
-
-
-  no-extra-parens: 2        # allow for not superflouous parentheses
 
 # vim: ft=yaml

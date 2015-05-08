@@ -41,4 +41,4 @@ const e404 = React.createClass({
 });
 
 export default Error;
-export { e404 }
+export { e404 };
