@@ -9,12 +9,21 @@ import debug  from '../../lib/debug';
 const templ    = path.join(__dirname, '../../app/views/main.hbs');
 const template = hbs.compile(fs.readFileSync(templ).toString());
 
-export default function (pth) {
+export default function (pth, koa) {
   pth = pth.replace(/\/$/, '');
   debug(`GET ${ pth }`);
   return new Promise(function (resolve, reject) {
     try {
-      Router.run(routes, pth, function (Handler) { // todo: add state
+      Router.run(routes, pth, function (Handler, state) {
+        const notfound = state.routes
+          .filter(router => router.name === '404')
+          .length > 0;
+
+        if ( notfound ) {
+          debug(`route ${ pth } not found`);
+          koa.status = 404;
+        }
+
         try {
           const data = {};
           resolve(template({

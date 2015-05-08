@@ -15,6 +15,6 @@ export default (
     path    = '/borges'
     handler = { App } >
     <DefaultRoute  handler={Home} />
-    <NotFoundRoute handler={e404} />
+    <NotFoundRoute handler={e404} name="404" />
   </Route>
 );

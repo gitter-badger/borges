@@ -20,7 +20,7 @@ export default function (options = {}) {
 
   // render route
   app.get(/^\/(?!.*assets)/, function * (next) {
-    this.body = yield render('/borges' + this.request.path);
+    this.body = yield render('/borges' + this.request.path, this);
     yield next;
   });
 
