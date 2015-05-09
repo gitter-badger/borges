@@ -60,7 +60,7 @@
   <use xlink:href="#TRB" fill="url(#g8)" />
 
   <!-- bottom right back -->
-  <linearGradient xlink:href="#g" id="g5" x1="32" y1="40" x2="53" y2="36" />
+  <linearGradient xlink:href="#g" id="g5" x1="52" y1="40" x2="32" y2="36" />
   <use xlink:href="#BRB" class="side"    />
   <use xlink:href="#BRB" fill="url(#g5)" />
 
