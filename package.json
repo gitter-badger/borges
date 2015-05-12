@@ -9,7 +9,7 @@
     "coverage": "npm run test -- --coverage -r lcov | ./node_modules/.bin/coveralls",
     "hcoverage": "npm run test -- --coverage -r html -o coverage.html && open coverage.html",
     "lintf": "eslint -c .eslintrc",
-    "lint": "npm run lintf -- src/**/*.js",
+    "lint": "npm run lintf -- src/**/*.{js,jsx} dev/*.js",
     "dev": "node --harmony dev/start"
   },
   "repository": {
