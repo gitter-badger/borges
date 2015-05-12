@@ -57,6 +57,7 @@ rules:
     - 2
 
   no-var: 2
+  new-cap: 0
   react/jsx-uses-react: 2
 
 # vim: ft=yaml
