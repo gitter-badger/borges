@@ -59,6 +59,34 @@ gulp --watch
 provided you have `gulp` installed.  This will rebuild the frontend files
 as well as restart the server any time something has changed.
 
+## Architecture
+Borges constists of several layers:
+
+```
+  +-----+---------+
+  | CMS | Backend |
+  +---------------+
+  |      API      |
+  +---------------+
+  |  Persistance  |
+  +---------------+
+```
+
+Everything is stored by the Persistance layer.  The Persistance layer is simple
+and interchangeable to allow for the use of any of the myriad of solutions
+that's already available (SQL, mongodb, plain files, ...).
+
+On top of this, the Borges API is built, this API is exposed to the
+developer to allow him to build a website in any way he chooses
+(using React + koa, Angular + express, ... anything is possible).
+
+The Borges frontend itself is built on top of this API.  The CMS is available as
+a simple http route handler.  This way it can be easily hooked into the existing
+backend infrastructure.  A big plus of dogfooding the API for the CMS is that it
+keeps Borges honest: the CMS cannot play any special tricks behind the scenes or
+use parts of the api that are hidden.  Since a CMS is generally one of the more
+complex applications one can build, this ensures that the API has enough
+features to build any kind website on top of it.
 
 ### License
 This code is licensed under the [ISC license][license]
