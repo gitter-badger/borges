@@ -11,7 +11,7 @@ const template = hbs.compile(fs.readFileSync(templ).toString());
 
 export default function (pth, koa) {
   pth = pth.replace(/\/$/, '');
-  debug(`GET ${ pth }`);
+  debug(`GET ${pth}`);
   return new Promise(function (resolve, reject) {
     try {
       Router.run(routes, pth, function (Handler, state) {
