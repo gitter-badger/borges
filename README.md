@@ -1,5 +1,7 @@
 # Borges.js
 
+[![Join the chat at https://gitter.im/romeovs/borges](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/romeovs/borges?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://img.shields.io/travis/romeovs/borges.svg?style=flat-square)][travis]
 [![Coverage Status](https://img.shields.io/coveralls/romeovs/borges.svg?style=flat-square)][coveralls]
 [![Dependencies](https://img.shields.io/david/romeovs/borges.svg?style=flat-square)][david]
